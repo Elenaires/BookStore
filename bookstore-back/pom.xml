@@ -12,14 +12,60 @@
     <properties>
         <endorsed.dir>${project.build.directory}/endorsed</endorsed.dir>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+        <!-- Test -->
+        <version.junit>4.12</version.junit>
+        <version.arquillian>1.4.1.Final</version.arquillian>
+        <version.arquillian.wildfly>2.1.1.Final</version.arquillian.wildfly>
+        <!--<version.shrinkwrap>1.2.6</version.shrinkwrap>-->
+        <!-- Plugins -->
+        <version.assembly.plugin>3.1.1</version.assembly.plugin>
+        <version.compiler.plugin>3.8.0</version.compiler.plugin>
+        <version.dependency.plugin>3.1.1</version.dependency.plugin>
+        <version.surefire.plugin>2.22.1</version.surefire.plugin>
+        <version.war.plugin>3.2.2</version.war.plugin>
     </properties>
-    
+
+    <dependencyManagement>
+        <dependencies>
+            <dependency>
+                <groupId>org.jboss.arquillian</groupId>
+                <artifactId>arquillian-bom </artifactId>
+                <version>${version.arquillian}</version>
+                <type>pom</type>
+                <scope>import</scope>
+            </dependency>
+        </dependencies>
+    </dependencyManagement>
+
     <dependencies>
         <dependency>
             <groupId>javax</groupId>
             <artifactId>javaee-web-api</artifactId>
             <version>7.0</version>
             <scope>provided</scope>
+        </dependency>
+
+        <!-- TEST -->
+        <dependency>
+            <groupId>org.jboss.arquillian.junit</groupId>
+            <artifactId>arquillian-junit-container</artifactId>
+            <scope>test</scope>
+        </dependency>
+        <dependency>
+            <groupId>org.wildfly.arquillian</groupId>
+            <artifactId>wildfly-arquillian-container-remote</artifactId>
+            <version>${version.arquillian.wildfly}</version>
+            <scope>test</scope>
+        </dependency>
+        <dependency>
+            <groupId>org.jboss.shrinkwrap</groupId>
+            <artifactId>shrinkwrap-api</artifactId>
+            <version>RELEASE</version>
+        </dependency>
+        <dependency>
+            <groupId>junit</groupId>
+            <artifactId>junit</artifactId>
+            <version>RELEASE</version>
         </dependency>
     </dependencies>
 
@@ -74,5 +120,4 @@
             </plugin>
         </plugins>
     </build>
-
 </project>
