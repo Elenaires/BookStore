@@ -1,0 +1,23 @@
+# ignore Mac system files
+.DS_store
+
+# ignore Maven generated target folders
+target
+
+# ignore IDEA files
+*.iml
+*.ipr
+*.iws
+.idea
+.idea/workspace.xml
+.idea/modules.xml
+.idea/artifacts
+.idea/compiler.xml
+
+# IntelliJ
+out/
+
+# ignore java class files
+*.class
+
+wildfly-18.0.1.Final

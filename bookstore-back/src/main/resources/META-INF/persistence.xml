@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<persistence xmlns="http://xmlns.jcp.org/xml/ns/persistence" version="2.1">
+
+    <persistence-unit name="bookStorePU">
+        <class>com.pluralsight.bookstore.model.Book</class>
+        <properties>
+            <!-- drop and create the database each time we re-deploy the application (in memory database) -->
+            <property name="javax.persistence.schema-generation.database.action" value="drop-and-create"/>
+            <!-- get the ddl script -->
+            <property name="javax.persistence.schema-generation.scripts.action" value="drop-and-create"/>
+            <!-- create script for creating tables under bookStoreCreate.ddl -->
+            <property name="javax.persistence.schema-generation.scripts.create-target" value="bookStoreCreate.ddl"/>
+            <!-- create script for dropping tables under bookStoreDrop.ddl -->
+            <property name="javax.persistence.schema-generation.scripts.drop-target" value="bookStoreDrop.ddl"/>
+        </properties>
+    </persistence-unit>
+</persistence>
