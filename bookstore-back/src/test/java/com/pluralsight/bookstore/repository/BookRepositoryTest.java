@@ -32,7 +32,19 @@ public class BookRepositoryTest {
                 .addAsManifestResource("META-INF/test-persistence.xml", "persistence.xml");
     }
 
-    @org.junit.Test
+    @Test(expected = Exception.class)
+    public void findWithInvalidId() {
+        bookRepository.find(null);
+    }
+
+    @Test(expected = Exception.class) // we expect an exception so test will pass
+    public void createInvalidBook() {
+        Book book = new Book("isbn", null, 12F, 123, Language.ENGLISH, new Date(), "http://m", "description");
+        book = bookRepository.create(book);
+
+    }
+
+    @Test
     public void create() {
         // Test counting books
         assertEquals(Long.valueOf(0), bookRepository.countAll());
