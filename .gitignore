@@ -20,4 +20,7 @@ out/
 # ignore java class files
 *.class
 
+# ignore deployable archives
+lib
+
 wildfly-18.0.1.Final
