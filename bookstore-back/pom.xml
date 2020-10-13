@@ -67,7 +67,7 @@
         <dependency>
             <groupId>junit</groupId>
             <artifactId>junit</artifactId>
-            <version>RELEASE</version>
+            <version>4.13.1</version>
             <scope>test</scope> <!-- this will enable the test class to be automatically generated under test directory -->
         </dependency>
         <!-- For ArquillianResteasyResource -->
